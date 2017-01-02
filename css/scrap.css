@@ -1,0 +1,29 @@
+.navbar .container-fluid {
+    padding: 0;
+}
+.navbar .navbar-header .navbar-brand {
+    color: #F05F40;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-link {
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) { 
+    .navbar .navbar-header {
+        float: left;
+    }
+    .navbar #collapseNavbar {
+        float: right;
+    }
+}
+
+@media (max-width: 768px) {
+   .navbar .navbar-header .navbar-brand {
+       margin-right: 0;
+    }
+    .navbar-toggler {
+        float: right;
+    }
+}
