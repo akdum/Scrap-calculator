@@ -1,12 +1,62 @@
+body,html {
+    height: 100%;
+    width: 100%;
+}
+hr {
+    border-color: #F05F40;
+    border-width: 3px;
+    max-width: 50px;
+}
+h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+header {
+    min-height: auto;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../img/header.jpg");
+    color: #fff;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #F05F40;
+    border-color: #F05F40;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.btn {
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+/* header */
 header, header .header-content {
     position: relative;
     width: 100%;
     text-align: center
 }
-body,html {
-    height: 100%;
-    width: 100%;
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
 }
+header .header-content .header-content-inner p {
+    font-weight: 400;
+    color: rgba(255,255,255,.95);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+/* ===========================================*/
+/* nav */
 .navbar .container-fluid {
     padding: 0;
 }
@@ -18,13 +68,7 @@ body,html {
 .navbar-light .navbar-nav .nav-link {
     text-transform: uppercase;
 }
-header {
-    min-height: auto;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../img/header.jpg");
-    color: #fff;
-}
+/*=================================================*/
 @media (min-width: 768px) { 
     .navbar-default {
         background-color: rgba(255,255,255,.5);
@@ -45,6 +89,20 @@ header {
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
         padding: 0 50px;
+    }
+    header .header-content .header-content-inner {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    header .header-content .header-content-inner h1 {
+        font-size: 50px;
+    }
+    header .header-content .header-content-inner p {
+        font-size: 20px;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
