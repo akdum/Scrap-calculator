@@ -3,7 +3,7 @@ body,html {
     width: 100%;
 }
 hr {
-    border-color: #F05F40;
+    border-color: #893544;
     border-width: 3px;
     max-width: 50px;
 }
@@ -28,17 +28,25 @@ header {
 }
 .btn-primary {
     color: #fff;
-    background-color: #F05F40;
-    border-color: #F05F40;
+    background-color: #893544;
+    border-color: #893544;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+}
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover{
+    color: #fff;
+    background-color: #893544;
+    border-color: #893544;
 }
 .btn {
     border: none;
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
+}
+section {
+    padding: 100px 0;
 }
 /* header */
 header, header .header-content {
@@ -69,6 +77,28 @@ header .header-content .header-content-inner p {
     text-transform: uppercase;
 }
 /*=================================================*/
+/* sections */
+.bg-primary {
+    background-color: #893544 !important;
+}
+/* ================================================*/
+.bg-primary h2 {
+    color: #fff;
+}
+.service-box {
+    max-width: 400px;
+    margin: 50px auto 0;
+}
+.service-box h3 {
+    margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+    .service-box {
+        margin: 20px auto 0;
+    }
+}
+
 @media (min-width: 768px) { 
     .navbar-default {
         background-color: rgba(255,255,255,.5);
@@ -109,7 +139,7 @@ header .header-content .header-content-inner p {
 @media (max-width: 768px) {
    .navbar .navbar-header .navbar-brand {
        margin-right: 0;
-       color: #F05F40;
+       color: #893544;
     }
     .navbar-toggler {
         float: right;
