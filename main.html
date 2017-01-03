@@ -63,35 +63,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-xs-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-user-circle text-primary sr-icons"></i>
-                        <h3>Дизайн каждого альбома уникален</h3>
-                        <p class="text-muted">Дизайн разрабатывается с учетом Вашего мнения.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-xs-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-credit-card text-primary sr-icons"></i>
-                        <h3>Оплата</h3>
-                        <p class="text-muted">Оплата безналичным переводом на карту Сбербанка.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-xs-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-train text-primary sr-icons"></i>
-                        <h3>Доставка по всей России</h3>
-                        <p class="text-muted">Альбом может быть доставлен по все России через Почту России.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-xs-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Сделано с Любовью</h3>
-                        <p class="text-muted">Каждый альбом уникальный и делается только для Вас.</p>
-                    </div>
-                </div>
+            <div class="row services-row">
             </div>
         </div>
     </section>
@@ -111,55 +83,29 @@
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row popup-gallery no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/album1.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/album1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Альбом для Златы
-                                </div>
-                                <div class="project-name">
-                                    Комментарии
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-xs-center">
+                    <h2 class="section-heading">Понравилось? Заказывайте!</h2>
+                    <hr class="primary">
+                    <p>Для большей информации и чтобы оставаться в курсе всех новостей рекомендуем посетить нашу группу в ВКонтакте.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/album2.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/album2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Нежный альбом для Марьяны
-                                </div>
-                                <div class="project-name">
-                                    Комментарии
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div class="col-lg-4 offset-lg-2 text-xs-center">
+                    <a href="https://vk.com/babyboomscrap"><i class="fa fa-vk fa-3x sr-contact"></i></a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="img/portfolio/fullsize/album3.jpg" class="portfolio-box">
-                        <img src="img/portfolio/thumbnails/album3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Альбом-замок для Стаси
-                                </div>
-                                <div class="project-name">
-                                    Комментарии
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div class="col-lg-4 text-xs-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
                 </div>
             </div>
         </div>
     </section>
     <script id="service-template" type="x-tmpl-mustache">
+        {{#services}}
         <div class="col-lg-3 col-md-6 text-xs-center">
             <div class="service-box">
                 <i class="fa fa-4x {{ className }} text-primary sr-icons"></i>
@@ -167,6 +113,26 @@
                 <p class="text-muted">{{ comment }}</p>
             </div>
         </div>
+        {{/services}}
+    </script>
+    <script id="portfolio-template" type="x-tmpl-mustache">
+        {{#portfolio}}
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/portfolio/fullsize/{{ name }}" class="portfolio-box">
+                        <img src="img/portfolio/thumbnails/{{ name }}" class="img-fluid" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="title text-faded">
+                                    {{ title }}
+                                </div>
+                                <div class="comments">
+                                    {{ comments }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        {{/portfolio}}
     </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -178,6 +144,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 <script src="./js/scrap.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586be04627105d57"></script>
 </body>
 
 </html>

@@ -4,14 +4,16 @@ var Scrap = (function() {
     var root = {};
 
     root.Init = function() {
+        PrepareServices();
         ScrollInit();
         AffixBehaviour();
+        GalleryInit();        
     }
 
     function AffixBehaviour() {
-        jQuery(window).on('scroll', function(event) {
-            var navBar =  jQuery('#mainNavBar');
-            var scrollValue = jQuery(window).scrollTop();
+        $(window).on('scroll', function(event) {
+            var navBar =  $('#mainNavBar');
+            var scrollValue = $(window).scrollTop();
             if (scrollValue > 100) {
                 navBar.addClass('affix');
             } else {
@@ -21,10 +23,10 @@ var Scrap = (function() {
     }
 
     function ScrollInit() {
-        jQuery("a.page-scroll").bind("click", function (e) {
-            var l = jQuery(this);
-            jQuery("html, body").stop().animate({
-                scrollTop: jQuery(l.attr("href")).offset().top - 50
+        $("a.page-scroll").bind("click", function (e) {
+            var l = $(this);
+            $("html, body").stop().animate({
+                scrollTop: $(l.attr("href")).offset().top - 50
             }, 1000);
             e.preventDefault();
         });
@@ -36,14 +38,16 @@ var Scrap = (function() {
             distance: "0px"
         }, 200);
 
-        jQuery("body").scrollspy({
+        $("body").scrollspy({
             target: ".navbar-fixed-top",
             offset: 51
         });
     }
 
     function GalleryInit() {
-        jQuery(".popup-gallery").magnificPopup({
+        PrepareGalleryData();
+
+        $(".popup-gallery").magnificPopup({
             delegate: "a",
             type: "image",
             tLoading: "Загружается изображение #%curr%...",
@@ -59,9 +63,39 @@ var Scrap = (function() {
         })
     }
 
+    function PrepareServices() {
+        var template = $('#service-template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, { "services": [
+                                                        {title: "Дизайн каждого альбома уникален", comment: "Дизайн разрабатывается с учетом Вашего мнения.", className: "fa-user-circle"},
+                                                        {title: "Оплата", comment: "Оплата безналичным переводом на карту Сбербанка.", className: "fa-credit-card"},
+                                                        {title: "Доставка по всей России", comment: "Альбом может быть доставлен по всей России через Почту России.", className: "fa-heart"},
+                                                        {title: "Сделано с Любовью", comment: "Каждый альбом уникальный и делается только для Вас.", className: "fa-user-circle"}
+                                                        ]
+                                                    });
+        $('#services .services-row').html(rendered);
+    }
+
+    function PrepareGalleryData() {
+        var template = $('#portfolio-template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, { "portfolio": [
+                                                        {title: "Альбом для Златы", comment: "Комментарий", name: "album1.jpg"},
+                                                        {title: "Нежный альбом для Марьяны", comment: "Комментарий", name: "album2.jpg"},
+                                                        {title: "Нежный альбом для Марьяны", comment: "Комментарий", name: "album2_1.jpg"},
+                                                        {title: "Альбом-замок для Стаси", comment: "Комментарий", name: "album3.jpg"},
+                                                        {title: "Альбом-замок для Стаси", comment: "Комментарий", name: "album3_1.jpg"},
+                                                        {title: "Альбом для Дашеньки", comment: "Комментарий", name: "album4.jpg"},
+                                                        ]
+                                                    });
+        $('.row.popup-gallery.no-gutter').html(rendered);
+    }
+
     return root;
 }(Scrap || {}))
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
     Scrap.Init();
 });
