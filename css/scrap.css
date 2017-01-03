@@ -7,7 +7,7 @@ a {
     color: #F05F40;
 }
 hr {
-    border-color: #b7db98;
+    border-color: #98bd78;
     border-width: 3px;
     max-width: 50px;
 }
@@ -38,16 +38,16 @@ header {
 }
 .btn-primary {
     color: #fff;
-    background-color: #b7db98;
-    border-color: #b7db98;
+    background-color: #98bd78;
+    border-color: #98bd78;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
 }
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover{
     color: #fff;
-    background-color: #b7db98;
-    border-color: #b7db98;
+    background-color: #98bd78;
+    border-color: #98bd78;
 }
 .btn {
     border: none;
@@ -70,7 +70,7 @@ section {
     padding: 100px 0;
 }
 .text-primary {
-    color: #b7db98 !important;
+    color: #98bd78 !important;
 }
 .no-gutter>[class*=col-] {
     padding-right: 0;
@@ -107,7 +107,7 @@ header .header-content .header-content-inner p {
 /*=================================================*/
 /* sections */
 .bg-primary {
-    background-color: #b7db98 !important;
+    background-color: #98bd78 !important;
 }
 /* ================================================*/
 .bg-primary h2 {
@@ -127,11 +127,14 @@ header .header-content .header-content-inner p {
     max-width: 650px;
     margin: 0 auto;
 }
+.portfolio-box:hover .portfolio-box-caption {
+    opacity: .8;
+}
 .portfolio-box .portfolio-box-caption {
     color: #fff;
     opacity: 0;
     display: block;
-    background: rgba(240,95,64,.9);
+    background: #a185ae;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -150,9 +153,8 @@ header .header-content .header-content-inner p {
     padding: 0 15px;
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-    text-transform: uppercase;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
 }
 /* =============================================*/
 @media (min-width: 992px) {
@@ -162,6 +164,14 @@ header .header-content .header-content-inner p {
 }
 
 @media (min-width: 768px) { 
+    .navbar-default.affix {
+        background-color: #fff;
+        border-color: rgba(34,34,34,.05);
+    }
+    .navbar-default.affix .navbar-header .navbar-brand {
+        color: #98bd78;
+        font-size: 17px;
+    }
     .navbar-default {
         background-color: rgba(255,255,255,.5);
     }
@@ -197,14 +207,14 @@ header .header-content .header-content-inner p {
         margin-right: auto;
     }
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 768px) {
    .navbar .navbar-header .navbar-brand {
        margin-right: 0;
-       color: #b7db98;
+       color: #98bd78;
     }
     .navbar-toggler {
         float: right;
