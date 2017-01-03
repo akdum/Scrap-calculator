@@ -1,48 +1,67 @@
-!function (a) {
-    "use strict";
-    a("a.page-scroll").bind("click", function (e) {
-        var l = a(this);
-        a("html, body").stop().animate({
-            scrollTop: a(l.attr("href")).offset().top - 50
-        }, 1000);
-        e.preventDefault();
-    });
+"use strict";
 
-    a(window).on('scroll', function(event) {
-        var navBar =  a('#mainNavBar');
-        var scrollValue = a(window).scrollTop();
-        if (scrollValue > 100) {
-            navBar.addClass('affix');
-        } else {
-            navBar.removeClass('affix');
-        }
-    });
+var Scrap = (function() {
+    var root = {};
 
-    a("body").scrollspy({
-        target: ".navbar-fixed-top",
-        offset: 51
-    });
+    root.Init = function() {
+        ScrollInit();
+        AffixBehaviour();
+    }
 
-    window.sr = ScrollReveal();
+    function AffixBehaviour() {
+        jQuery(window).on('scroll', function(event) {
+            var navBar =  jQuery('#mainNavBar');
+            var scrollValue = jQuery(window).scrollTop();
+            if (scrollValue > 100) {
+                navBar.addClass('affix');
+            } else {
+                navBar.removeClass('affix');
+            }
+        });
+    }
 
-    sr.reveal(".sr-icons", {
-        duration: 1600,
-        scale: .1,
-        distance: "0px"
-    }, 200);
+    function ScrollInit() {
+        jQuery("a.page-scroll").bind("click", function (e) {
+            var l = jQuery(this);
+            jQuery("html, body").stop().animate({
+                scrollTop: jQuery(l.attr("href")).offset().top - 50
+            }, 1000);
+            e.preventDefault();
+        });
 
-    a(".popup-gallery").magnificPopup({
-        delegate: "a",
-        type: "image",
-        tLoading: "Загружается изображение #%curr%...",
-        mainClass: "mfp-img-mobile",
-        gallery: {
-            enabled: !0,
-            navigateByImgClick: !0,
-            preload: [0, 1]
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-        }
-    })
-} (jQuery);
+        window.sr = ScrollReveal();
+        sr.reveal(".sr-icons", {
+            duration: 1600,
+            scale: .1,
+            distance: "0px"
+        }, 200);
+
+        jQuery("body").scrollspy({
+            target: ".navbar-fixed-top",
+            offset: 51
+        });
+    }
+
+    function GalleryInit() {
+        jQuery(".popup-gallery").magnificPopup({
+            delegate: "a",
+            type: "image",
+            tLoading: "Загружается изображение #%curr%...",
+            mainClass: "mfp-img-mobile",
+            gallery: {
+                enabled: !0,
+                navigateByImgClick: !0,
+                preload: [0, 1]
+            },
+            image: {
+                tError: '<a href="%url%">Изображение #%curr%</a> не удается загрузить.'
+            }
+        })
+    }
+
+    return root;
+}(Scrap || {}))
+
+jQuery(document).ready(function() {
+    Scrap.Init();
+});
