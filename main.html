@@ -75,7 +75,7 @@
                     <hr class="light">
                     <p class="text-faded">Вы можете расчитать примерную стоимость и параметры альбома прямо сейчас! Более того, Вы можете использовать
                         расчитанную сумму как ориентир для себя.</p>
-                    <a href="#" class="btn btn-default btn-lg sr-button">Расчитать!</a>
+                    <a href="javascript:$('#calculateModal').modal('show');" class="btn btn-default btn-lg sr-button">Расчитать!</a>
                 </div>
             </div>
         </div>
@@ -134,6 +134,26 @@
                 </div>
         {{/portfolio}}
     </script>
+// <!-- Modal -->
+<div class="modal fade" id="calculateModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Расчет стоимости альбома</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть и сбросить</button>
+        <button type="button" class="btn btn-primary">Заказать по расчету</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
