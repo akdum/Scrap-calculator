@@ -94,7 +94,10 @@ var Scrap = (function() {
                 var $this = $(this);
                 $this.closest('.row').find(".variant-box.active").removeClass('active');
                 $this.addClass('active');
-                root.VariantInfoSection.show(400);
+                root.VariantInfoSection.show();
+                $("html, body").stop().animate({
+                    scrollTop: root.VariantInfoSection.offset().top - 50
+                }, 1000);
                 e.stopPropagation();
             });
         });

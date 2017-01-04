@@ -93,6 +93,12 @@ section {
 .no-padding {
     padding: 0;
 }
+[class*="col-"] {
+    margin-bottom: 30px;
+}
+[class*="col-"]:last-of-type {
+    margin-bottom: 0px;
+}
 /* ============================================= */
 /* =============NAVIGATION====================== */
 /* ============================================= */
@@ -163,14 +169,14 @@ header .header-content .header-content-inner p {
     cursor: pointer;
     box-sizing: content-box;
     border: 1px solid #fff;
-    background-color: #b7db98;
-    margin: 1rem;
+    background-color: #f2f2f2;
 }
-#calculate .variant-box:hover {
-    border: 1px solid #a185ae;
-}
+#calculate .variant-box:hover,
 #calculate .variant-box.active {
-    border: 1px solid #a185ae;
+    background-color: rgba(183, 219, 152, 0.51);
+}
+#calculate .variant-box figure {
+    padding: 1rem;
 }
 #calculate .variant-box .thumbnail img {
     width: 100%;
