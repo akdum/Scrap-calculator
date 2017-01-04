@@ -80,6 +80,9 @@ section {
     padding: 0;
 }
 /* header */
+header .header-content {
+    padding: 100px 15px;
+}
 header, header .header-content {
     position: relative;
     width: 100%;
@@ -106,6 +109,11 @@ header .header-content .header-content-inner p {
 }
 .navbar-light .navbar-nav .nav-link {
     text-transform: uppercase;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: rgba(34,34,34,.05);
+    transition: all .35s;
 }
 /*=================================================*/
 /* sections */
