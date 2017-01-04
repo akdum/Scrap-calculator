@@ -92,12 +92,19 @@ var Scrap = (function() {
         $(".variant-box", container[0]).each(function() {
             $(this).on('click', function(e) {
                 var $this = $(this);
-                $this.closest('.row').find(".variant-box.active").removeClass('active');
-                $this.addClass('active');
-                root.VariantInfoSection.show();
-                $("html, body").stop().animate({
-                    scrollTop: root.VariantInfoSection.offset().top - 50
-                }, 1000);
+                if (!$this.hasClass('active')) {
+                    $this.closest('.row').find(".variant-box.active").removeClass('active');
+                    $this.addClass('active');
+
+                    root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : $this.offset().top + $this.height() + 15});
+                    root.VariantInfoSection.show();
+                    $("html, body").stop().animate({
+                        scrollTop: root.VariantInfoSection.offset().top - root.VariantInfoSection[0].clientHeight
+                    }, 1000);
+                } else {
+                    $this.removeClass('active');
+                    root.VariantInfoSection.hide(400);
+                }
                 e.stopPropagation();
             });
         });
