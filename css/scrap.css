@@ -1,21 +1,16 @@
+/* ============= tags =================== */
 body,html {
     height: 100%;
     width: 100%;
+    font-size: 16px;
 }
 a {
     transition: all .35s;
     color: #a185ae;
 }
 hr {
-    border-color: #a185ae;
-    border-width: 3px;
-    max-width: 50px;
-}
-hr.light {
-    border-color: #fff;
-}
-.text-faded {
-    color: rgba(255,255,255,.9);
+    border-width: 0;
+    margin: 50px 0;
 }
 h1 {
     font-weight: 700;
@@ -25,7 +20,6 @@ h1 {
     font-size: 30px;
 }
 p {
-    font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -35,6 +29,16 @@ header {
     background-position: center;
     background-image: url("../img/header.jpg");
     color: #fff;
+}
+section {
+    padding: 100px 0;
+}
+/* =========== common classes ==================*/
+.btn {
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .btn-primary {
     color: #fff;
@@ -49,12 +53,6 @@ header {
     background-color: #a185ae;
     border-color: #a185ae;
 }
-.btn {
-    border: none;
-    border-radius: 300px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
 .btn-default {
     color: #222;
     background-color: #fff;
@@ -66,12 +64,6 @@ header {
     background-color: #fff;
     border-color: #fff;
 }
-section {
-    padding: 100px 0;
-}
-.text-primary {
-    color: #a185ae !important;
-}
 .no-gutter>[class*=col-] {
     padding-right: 0;
     padding-left: 0;
@@ -79,7 +71,13 @@ section {
 .no-padding {
     padding: 0;
 }
-/* header */
+.text-faded {
+    color: rgba(255,255,255,.9);
+}
+.text-primary {
+    color: #a185ae !important;
+}
+/* ================== header =====================*/
 header .header-content {
     padding: 100px 15px;
 }
@@ -88,9 +86,6 @@ header, header .header-content {
     width: 100%;
     text-align: center
 }
-header .header-content .header-content-inner hr {
-    margin: 30px auto;
-}
 header .header-content .header-content-inner p {
     font-weight: 400;
     color: rgba(255,255,255,.95);
@@ -98,7 +93,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 50px;
 }
 /* ===========================================*/
-/* nav */
+/* ===================nav ======================= */
 .navbar .container-fluid {
     padding: 0;
 }
@@ -120,7 +115,6 @@ header .header-content .header-content-inner p {
 .bg-primary {
     background-color: #a185ae !important;
 }
-/* ================================================*/
 .bg-primary h2 {
     color: #fff;
 }
@@ -131,6 +125,7 @@ header .header-content .header-content-inner p {
 .service-box h3 {
     margin-top: 20px;
 }
+/* ================================================*/
 /* portfolio */
 .portfolio-box {
     position: relative;
@@ -174,7 +169,12 @@ header .header-content .header-content-inner p {
     }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+    /* tags */
+    header  {
+        min-height: 100%;
+    }
+    /* ============= navbar ===============*/ 
     .navbar-default.affix {
         background-color: #fff;
         border-color: rgba(34,34,34,.05);
@@ -196,9 +196,8 @@ header .header-content .header-content-inner p {
     .navbar-default .nav > li > a:focus {
         color: #a185ae !important;
     }
-    header  {
-        min-height: 100%;
-    }
+    /* ==========================================*/
+    /* header */ 
     header .header-content {
         position: absolute;
         top: 50%;
@@ -221,15 +220,18 @@ header .header-content .header-content-inner p {
         margin-left: auto;
         margin-right: auto;
     }
+    /* sections */ 
     .services-row .col-md-6 {
         height: 270px;
     }
+    /* portfolio */
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .title {
         font-size: 20px;
     }
 }
 
 @media (max-width: 768px) {
+    /* moblie navbar */
    .navbar .navbar-header .navbar-brand {
        margin-right: 0;
        color: #a185ae;
@@ -237,4 +239,5 @@ header .header-content .header-content-inner p {
     .navbar-toggler {
         float: right;
     }
+    /* ===============*/
 }
