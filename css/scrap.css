@@ -4,10 +4,10 @@ body,html {
 }
 a {
     transition: all .35s;
-    color: #98bd78;
+    color: #a185ae;
 }
 hr {
-    border-color: #98bd78;
+    border-color: #a185ae;
     border-width: 3px;
     max-width: 50px;
 }
@@ -38,16 +38,16 @@ header {
 }
 .btn-primary {
     color: #fff;
-    background-color: #98bd78;
-    border-color: #98bd78;
+    background-color: #a185ae;
+    border-color: #a185ae;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
 }
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover{
     color: #fff;
-    background-color: #98bd78;
-    border-color: #98bd78;
+    background-color: #a185ae;
+    border-color: #a185ae;
 }
 .btn {
     border: none;
@@ -70,7 +70,7 @@ section {
     padding: 100px 0;
 }
 .text-primary {
-    color: #98bd78 !important;
+    color: #a185ae !important;
 }
 .no-gutter>[class*=col-] {
     padding-right: 0;
@@ -118,7 +118,7 @@ header .header-content .header-content-inner p {
 /*=================================================*/
 /* sections */
 .bg-primary {
-    background-color: #98bd78 !important;
+    background-color: #a185ae !important;
 }
 /* ================================================*/
 .bg-primary h2 {
@@ -180,7 +180,7 @@ header .header-content .header-content-inner p {
         border-color: rgba(34,34,34,.05);
     }
     .navbar-default.affix .navbar-header .navbar-brand {
-        color: #98bd78;
+        color: #a185ae;
         font-size: 17px;
     }
     .navbar-default {
@@ -194,7 +194,7 @@ header .header-content .header-content-inner p {
     }
     .navbar-default .nav > li > a.active, 
     .navbar-default .nav > li > a:focus {
-        color: #98bd78 !important;
+        color: #a185ae !important;
     }
     header  {
         min-height: 100%;
@@ -232,7 +232,7 @@ header .header-content .header-content-inner p {
 @media (max-width: 768px) {
    .navbar .navbar-header .navbar-brand {
        margin-right: 0;
-       color: #98bd78;
+       color: #a185ae;
     }
     .navbar-toggler {
         float: right;
