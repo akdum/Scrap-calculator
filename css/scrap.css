@@ -1,4 +1,24 @@
-/* ============= tags =================== */
+/*
+Made by Ivan Steblenko 01/04/17.
+
+Content:
+Global Styles
+Navigation
+Header
+Text Styles
+Page Structure
+Headings
+Forms
+Comments
+Extras
+*/
+/* ============================================= */
+/* =============GLOBAL STYLES=================== */
+/* ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+}
 body,html {
     height: 100%;
     width: 100%;
@@ -29,11 +49,13 @@ header {
     background-position: center;
     background-image: url("../img/header.jpg");
     color: #fff;
+    position: relative;
+    width: 100%;
+    text-align: center
 }
 section {
     padding: 100px 0;
 }
-/* =========== common classes ==================*/
 .btn {
     border: none;
     border-radius: 300px;
@@ -71,29 +93,9 @@ section {
 .no-padding {
     padding: 0;
 }
-.text-faded {
-    color: rgba(255,255,255,.9);
-}
-.text-primary {
-    color: #a185ae !important;
-}
-/* ================== header =====================*/
-header .header-content {
-    padding: 100px 15px;
-}
-header, header .header-content {
-    position: relative;
-    width: 100%;
-    text-align: center
-}
-header .header-content .header-content-inner p {
-    font-weight: 400;
-    color: rgba(255,255,255,.95);
-    font-size: 16px;
-    margin-bottom: 50px;
-}
-/* ===========================================*/
-/* ===================nav ======================= */
+/* ============================================= */
+/* =============NAVIGATION====================== */
+/* ============================================= */
 .navbar .container-fluid {
     padding: 0;
 }
@@ -110,71 +112,96 @@ header .header-content .header-content-inner p {
     border-color: rgba(34,34,34,.05);
     transition: all .35s;
 }
-/*=================================================*/
-/* sections */
+/* ============================================= */
+/* =============HEADER========================== */
+/* ============================================= */
+header .header-content {
+    padding: 100px 15px;
+}
+header .header-content {
+    position: relative;
+    width: 100%;
+    text-align: center
+}
+header .header-content .header-content-inner p {
+    font-weight: 400;
+    color: rgba(255,255,255,.95);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+/* ============================================= */
+/* =============TEXT STYLES=================== */
+/* ============================================= */
+.text-faded {
+    color: rgba(255,255,255,.9);
+}
+.text-primary {
+    color: #a185ae !important;
+}
+/* ============================================= */
+/* =============PAGE STRUCTURE=================== */
+/* ============================================= */
 .bg-primary {
     background-color: #a185ae !important;
+}
+.bg-secondary {
+    background-color: #b7db98;
 }
 .bg-primary h2 {
     color: #fff;
 }
-.service-box {
+.promo-box {
     max-width: 400px;
     margin: 50px auto 0;
 }
-.service-box h3 {
+.promo-box h3 {
     margin-top: 20px;
 }
-/* ================================================*/
-/* portfolio */
-.portfolio-box {
-    position: relative;
-    display: block;
-    max-width: 650px;
-    margin: 0 auto;
+/* Variants */
+#calculate .variant-box {
+    width: 100%;    
+    cursor: pointer;
+    box-sizing: content-box;
+    border: 1px solid #fff;
+    background-color: #b7db98;
+    margin: 1rem;
 }
-.portfolio-box:hover .portfolio-box-caption {
-    opacity: .8;
+#calculate .variant-box:hover {
+    border: 1px solid #a185ae;
 }
-.portfolio-box .portfolio-box-caption {
-    color: #fff;
-    opacity: 0;
-    display: block;
-    background: #a185ae;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
+#calculate .variant-box.active {
+    border: 1px solid #a185ae;
+}
+#calculate .variant-box .thumbnail img {
     width: 100%;
-    height: 100%;
-    transition: all .35s;
 }
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .title, .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .comments {
-    padding: 0 15px;
-}
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .title {
-    font-weight: 600;
-    font-size: 16px;
+#calculate .variant-box .price {
+    font-size: 2rem;
+    font-weight: bold;
+    float: right;
+    padding-right: 1rem;
 }
 /* =============================================*/
+
 @media (min-width: 992px) {
-    .service-box {
+    /* ============================================= */
+    /* =============PAGE STRUCTURE=================== */
+    /* ============================================= */
+    .promo-box {
         margin: 20px auto 0;
     }
 }
 
 @media (min-width: 768px) {
-    /* tags */
+    /* ============================================= */
+    /* =============GLOBAL STYLES=================== */
+    /* ============================================= */
     header  {
         min-height: 100%;
     }
-    /* ============= navbar ===============*/ 
+    /* ============================================= */
+    /* =============NAVIGATION====================== */
+    /* ============================================= */
     .navbar-default.affix {
         background-color: #fff;
         border-color: rgba(34,34,34,.05);
@@ -196,8 +223,9 @@ header .header-content .header-content-inner p {
     .navbar-default .nav > li > a:focus {
         color: #a185ae !important;
     }
-    /* ==========================================*/
-    /* header */ 
+    /* ============================================= */
+    /* =============HEADER========================== */
+    /* ============================================= */
     header .header-content {
         position: absolute;
         top: 50%;
@@ -220,18 +248,18 @@ header .header-content .header-content-inner p {
         margin-left: auto;
         margin-right: auto;
     }
-    /* sections */ 
+    /* ============================================= */
+    /* =============PAGE STRUCTURE=================== */
+    /* ============================================= */
     .services-row .col-md-6 {
         height: 270px;
-    }
-    /* portfolio */
-    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .title {
-        font-size: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    /* moblie navbar */
+    /* ============================================= */
+    /* =============NAVIGATION====================== */
+    /* ============================================= */
    .navbar .navbar-header .navbar-brand {
        margin-right: 0;
        color: #a185ae;
@@ -239,5 +267,4 @@ header .header-content .header-content-inner p {
     .navbar-toggler {
         float: right;
     }
-    /* ===============*/
 }

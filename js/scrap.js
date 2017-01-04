@@ -3,11 +3,15 @@
 var Scrap = (function() {
     var root = {};
 
+    root.VariantInfoSection = null;
+
     root.Init = function() {
-        PrepareServices();
+        root.VariantInfoSection = $("#variant-info");
+
+        PreparePromo($("#description .description-row"));
+        PrepareVariants();
         ScrollInit();
-        AffixBehaviour();
-        GalleryInit();        
+        AffixBehaviour();   
     }
 
     function AffixBehaviour() {
@@ -38,59 +42,67 @@ var Scrap = (function() {
             distance: "0px"
         }, 200);
 
+        sr.reveal(".sr-variant", {
+            duration: 1600,
+            scale: .8,
+            distance: "0px"
+        }, 200);
+
         $("body").scrollspy({
             target: ".navbar-fixed-top",
             offset: 51
         });
     }
 
-    function GalleryInit() {
-        PrepareGalleryData();
-
-        $(".popup-gallery").magnificPopup({
-            delegate: "a",
-            type: "image",
-            tLoading: "Загружается изображение #%curr%...",
-            mainClass: "mfp-img-mobile",
-            gallery: {
-                enabled: !0,
-                navigateByImgClick: !0,
-                preload: [0, 1]
-            },
-            image: {
-                tError: '<a href="%url%">Изображение #%curr%</a> не удается загрузить.'
-            }
-        })
-    }
-
-    function PrepareServices() {
-        var template = $('#service-template').html();
+    function PreparePromo(container) {
+        var template = $('#promo-icon-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, { "services": [
-                                                        {title: "Дизайн каждого альбома уникален", comment: "Дизайн разрабатывается с учетом Вашего мнения.", className: "fa-user-circle"},
-                                                        {title: "Оплата", comment: "Оплата безналичным переводом на карту Сбербанка.", className: "fa-credit-card"},
-                                                        {title: "Доставка по всей России", comment: "Альбом может быть доставлен по всей России через Почту России.", className: "fa-heart"},
-                                                        {title: "Сделано с Любовью", comment: "Каждый альбом уникальный и делается только для Вас.", className: "fa-user-circle"}
+        var rendered = Mustache.render(template, { "promo": [
+                                                        {title: "Дизайн уникален", comment: "Дизайн разрабатывается с учетом Вашего мнения.", className: "fa-user-circle text-faded", textClassName: "text-faded"},
+                                                        {title: "Необычно", comment: "Отличный необычный подарок друзьям и близким.", className: "fa-gift text-faded", textClassName: "text-faded"},
+                                                        {title: "Красиво", comment: "Превосходное место сохранить свои волшебные моменты.", className: "fa-picture-o text-faded", textClassName: "text-faded"},
+                                                        {title: "Сделано с Любовью", comment: "Каждый альбом уникальный и делается только для Вас.", className: "fa-heart text-faded", textClassName: "text-faded"}
                                                         ]
                                                     });
-        $('#services .services-row').html(rendered);
+        container.html(rendered);
     }
 
-    function PrepareGalleryData() {
-        var template = $('#portfolio-template').html();
+    function PrepareVariants() {
+        var row = $("#calculate .calculate-row");
+        PrepareVariantsMarkup(row);
+        PrepareVariantsEvents(row)
+    }
+
+    function PrepareVariantsMarkup(container) {
+        var template = $('#variant-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, { "portfolio": [
-                                                        {title: "Альбом для Златы", comment: "Комментарий", name: "album1.jpg"},
-                                                        {title: "Нежный альбом для Марьяны", comment: "Комментарий", name: "album2.jpg"},
-                                                        {title: "Нежный альбом для Марьяны", comment: "Комментарий", name: "album2_1.jpg"},
-                                                        {title: "Альбом-замок для Стаси", comment: "Комментарий", name: "album3.jpg"},
-                                                        {title: "Альбом-замок для Стаси", comment: "Комментарий", name: "album3_1.jpg"},
-                                                        {title: "Альбом для Дашеньки", comment: "Комментарий", name: "album4.jpg"},
+        var rendered = Mustache.render(template, { "variants": [
+                                                        {name: "album1.jpg", price: "700"},
+                                                        {name: "album2.jpg", price: "1500"},
+                                                        {name: "album3.jpg", price: "3500"},
+                                                        {name: "album4.jpg", price: "5000"}
                                                         ]
                                                     });
-        $('.row.popup-gallery.no-gutter').html(rendered);
+        container.html(rendered);
+    }
+
+    function PrepareVariantsEvents(container) {
+        $(".variant-box", container[0]).each(function() {
+            $(this).on('click', function(e) {
+                var $this = $(this);
+                $this.closest('.row').find(".variant-box.active").removeClass('active');
+                $this.addClass('active');
+                root.VariantInfoSection.show(400);
+                e.stopPropagation();
+            });
+        });
+        $("body").on('click', function(e) {
+            if (root.VariantInfoSection.is(":visible")) {
+                root.VariantInfoSection.hide(400);
+            }            
+        });
     }
 
     return root;
