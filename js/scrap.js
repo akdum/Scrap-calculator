@@ -117,7 +117,9 @@ var Scrap = (function() {
         albumObject.closest('div[class*="col"').siblings().each(function() { 
             var $this = $(this);
             var albumTop = albumObject.offset().top;
+            alert('albumTop '+ albumTop);
             var marginOffset = root.VariantInfoSection[0].clientHeight;
+            alert('offset el '+ $this.offset().top);
             if ($this.offset().top > albumTop) {
                 $this.css('margin-top', marginOffset + 'px');
                 alert('offset '+ marginOffset);
