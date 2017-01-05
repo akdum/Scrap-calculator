@@ -97,10 +97,7 @@ var Scrap = (function() {
                     $this.closest('.row').find(".variant-box.active").removeClass('active');
                     $this.addClass('active');
 
-                    ShowInfoPanel($this);
-                    // $("html, body").stop().animate({
-                    //     scrollTop: root.VariantInfoSection.offset().top - root.VariantInfoSection[0].clientHeight
-                    // }, 1000);                    
+                    ShowInfoPanel($this);              
                 } else {
                     $this.removeClass('active');
                     HideInfoPanel(variants);
@@ -114,6 +111,7 @@ var Scrap = (function() {
     }
 
     function ShowInfoPanel(albumObject) {
+        alert(root.VariantInfoSection.length);
         root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});        
         root.VariantInfoSection.show();
         albumObject.closest('div[class*="col"').siblings().each(function() { 
