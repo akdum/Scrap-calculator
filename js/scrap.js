@@ -143,7 +143,7 @@ var Scrap = (function() {
                 return false;
             }
         });
-        nextRowElement.css('background-color', 'red');
+        alert(nextRowElement.find('.price').text());
     }
 
     function HideInfoPanel(variants) {
