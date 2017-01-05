@@ -137,6 +137,7 @@ var Scrap = (function() {
         //         }
         //     }            
         // })        
+        alert(albumObject.length);
         alert('start nextRowElement');
         var albumColumn = albumObject.closest('div[class*="col"');
         var nextRowElement = albumColumn;
