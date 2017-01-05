@@ -169,7 +169,7 @@ header .header-content .header-content-inner p {
 }
 /* Variants */
 .info-column {
-    background-color: rgba(183, 219, 152, 0.51);
+    background-color: rgba(161, 133, 174, 0.42);
     width: 100%;
     transition: all 1s;
 }
@@ -186,12 +186,9 @@ header .header-content .header-content-inner p {
     border: 1px solid #fff;
     background-color: #f2f2f2;
 }
-#calculate .variant-box:hover,
 #calculate .variant-box.active {
-    background-color: rgba(183, 219, 152, 0.51);
-}
-#calculate .variant-box figure {
-    padding: 1rem;
+    background-color: #a185ae;
+    color: #fff;
 }
 #calculate .variant-box .thumbnail img {
     width: 100%;

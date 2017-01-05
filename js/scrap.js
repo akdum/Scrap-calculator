@@ -96,16 +96,16 @@ var Scrap = (function() {
                     $this.addClass('active');
                     HideInfoPanel();
                     
-                    ShowInfoPanel($this);              
+                    ShowInfoPanel($this);
+                    $("html, body").stop().animate({
+                        scrollTop: $this.offset().top - 50
+                    }, 1000);
                 } else {
                     $this.removeClass('active');
                     HideInfoPanel();
                 }
                 e.stopPropagation();
             });
-        });
-        $("body").on('click', function(e) {
-            HideInfoPanel();
         });
     }
 
@@ -145,10 +145,26 @@ var Scrap = (function() {
 
     function FillInfoPanel(albumColumnModel) {
         var template = $('#gallery-template').html();
+        var row = root.VariantInfoColumn.find('.row');
         Mustache.parse(template);   // optional, speeds up future uses
 
         var rendered = Mustache.render(template, {"gallery": albumColumnModel.gallery});
-        root.VariantInfoColumn.find('.row').html(rendered);
+        row.html(rendered);
+
+        row.magnificPopup({
+            delegate: "a",
+            type: "image",
+            tLoading: "Загружается изображение #%curr%...",
+            mainClass: "mfp-img-mobile",
+            gallery: {
+                enabled: !0,
+                navigateByImgClick: !0,
+                preload: [0, 1]
+            },
+            image: {
+                tError: '<a href="%url%">Изображение #%curr%</a> не загрузилось.'
+            }
+        })
     }
 
     function HideInfoPanel() {
