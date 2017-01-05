@@ -118,7 +118,7 @@ var Scrap = (function() {
 
     function ShowInfoPanel(albumObject) {         
         var albumColumn = albumObject.closest("div[class*='col']");
-        var nextRowElement = albumColumn;
+        var nextRowElement = null;
         albumColumn.siblings().each(function() {
             var $this = $(this);
             if ($this.offset().top > albumObject.offset().top) {
@@ -127,10 +127,13 @@ var Scrap = (function() {
             }
         });
 
-        root.VariantInfoColumn
-            .detach()
-            .insertBefore(nextRowElement)
-            .show(400);
+        root.VariantInfoColumn.detach();
+        if (nextRowElement) {
+            root.VariantInfoColumn.insertBefore(nextRowElement);            
+        } else {
+            root.VariantInfoColumn.insertAfter(albumColumn);
+        }
+        root.VariantInfoColumn.show(400);
     }
 
     function HideInfoPanel() {
