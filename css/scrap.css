@@ -171,7 +171,13 @@ header .header-content .header-content-inner p {
 .info-column {
     background-color: rgba(183, 219, 152, 0.51);
     width: 100%;
-    transition: all 0.5s;
+    transition: all 1s;
+}
+.info-column .gallery {
+    margin-top: 3rem;
+}
+.info-column .thumbnail img {
+    width: 100%;
 }
 #calculate .variant-box {
     width: 100%;    
@@ -196,6 +202,7 @@ header .header-content .header-content-inner p {
     float: right;
     padding-right: 1rem;
 }
+
 /* =============================================*/
 
 @media (min-width: 992px) {

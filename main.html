@@ -99,7 +99,9 @@
         </div>
     </section>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center info-column" style="display: none;opacity: 0">
-        <h2 class="section-heading">Информация</h2>
+        <div class="container-fluid">
+            <div class="row gallery"></div>
+        </div>
     </div>
     <script id="promo-icon-template" type="x-tmpl-mustache">
         {{#promo}}
@@ -114,7 +116,7 @@
     </script>
     <script id="variant-template" type="x-tmpl-mustache">
         {{#variants}}
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12" data-id="{{ id }}">
             <div class="variant-box clearfix sr-variant">
                 <figure class="thumbnail">
                     <img src="./img/thumbnails/{{ name }}" />
@@ -123,6 +125,15 @@
             </div>
         </div>
         {{/variants}}
+    </script>
+    <script id="gallery-template" type="x-tmpl-mustache">
+        {{#gallery}}
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <figure class="thumbnail">
+                <img src="./img/thumbnails/{{ name }}" />
+            </figure>
+        </div>        
+        {{/gallery}}
     </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

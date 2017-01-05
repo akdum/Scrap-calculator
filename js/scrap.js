@@ -82,7 +82,7 @@ var Scrap = (function() {
         var template = $('#variant-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, {"variants": window.PromoAlums});
+        var rendered = Mustache.render(template, {"variants": window.PromoAlbums});
         container.html(rendered);
     }
 
@@ -127,8 +127,28 @@ var Scrap = (function() {
             root.VariantInfoColumn.insertAfter(albumColumn);
         }
         root.VariantInfoColumn.show(0, function(){
-            $(this).css('opacity','1');
+            FillInfoPanel(GetAlbumModelById(albumColumn.data('id')));
+            $(this).css('opacity','1');            
         });
+    }
+
+    function GetAlbumModelById(id) {
+        var model = null;
+        $(window.PromoAlbums).each(function() {
+            var $this = $(this)[0];
+            if ($this.id == id) {
+                model = $this;
+            }
+        })
+        return model;
+    }
+
+    function FillInfoPanel(albumColumnModel) {
+        var template = $('#gallery-template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, {"gallery": albumColumnModel.gallery});
+        root.VariantInfoColumn.find('.row').html(rendered);
     }
 
     function HideInfoPanel() {
