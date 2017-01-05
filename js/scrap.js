@@ -121,6 +121,7 @@ var Scrap = (function() {
             if ($this.offset().top > albumTop) {
                 $this.css('margin-top', marginOffset + 'px');
                 alert('offset '+ marginOffset);
+                break;
             }
         })        
 
