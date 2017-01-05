@@ -82,7 +82,9 @@ var Scrap = (function() {
                                                         {name: "album1.jpg", price: "700"},
                                                         {name: "album2.jpg", price: "1500"},
                                                         {name: "album3.jpg", price: "3500"},
-                                                        {name: "album4.jpg", price: "5000"}
+                                                        {name: "album4.jpg", price: "5000"},
+                                                         {name: "album1.jpg", price: "7000"},
+                                                        {name: "album2.jpg", price: "10000"}
                                                         ]
                                                     });
         container.html(rendered);
@@ -111,29 +113,44 @@ var Scrap = (function() {
     }
 
     function ShowInfoPanel(albumObject) {        
-        root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});                
-        root.VariantInfoSection.show();
-        var needToMove = true;
-        var albumTop = albumObject.offset().top;            
-        var marginOffset = root.VariantInfoSection[0].clientHeight;
-        alert('albumTop '+ albumTop);
-        albumObject.closest('div[class*="col"').siblings().each(function() { 
-            var $this = $(this);                                    
-            if ($this.offset().top > albumTop && needToMove) {
-                alert('offset element '+ $this.offset().top);
-                $this.css('margin-top', marginOffset + 'px');
-                alert('margin-top '+ marginOffset);                
-                needToMove = false;
-            }            
-        })        
+        // root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});                
+        // root.VariantInfoSection.show();
+        // var lastOffset = 0;
 
+        // var albumTop = albumObject.offset().top;            
+        // var marginOffset = root.VariantInfoSection[0].clientHeight;
+
+        // alert('albumTop '+ albumTop);
+        // albumObject.closest('div[class*="col"').siblings().each(function() { 
+        //     var $this = $(this);
+        //     var $thisOffset = $this.offset().top;
+        //     if ( $thisOffset > albumTop) {
+        //         if (lastOffset == 0) lastOffset = $this.offset().top;
+        //         if (!($thisOffset  > lastOffset)) {
+        //             alert('offset element '+ $thisOffset);
+        //             $this.css('margin-top', marginOffset + 'px');
+        //             alert('margin-top '+ marginOffset);
+        //         }
+        //     }            
+        // })        
+        var albumColumn = albumObject.closest('div[class*="col"');
+        var nextRowElement = albumColumn;
+
+        albumColumn.siblings().each(function() {
+            var $this = $(this);
+            if ($this.offset().top > albumObject.offset().top) {
+                nextRowElement = $this;
+                return false;
+            }
+        });
+        nextRowElement.css('background-color', 'red');
     }
 
     function HideInfoPanel(variants) {
-        if (root.VariantInfoSection.is(":visible")) {
-            root.VariantInfoSection.hide().detach().appendTo($('body'));
-        }
-        variants.closest('div[class*="col"').removeAttr('style');
+        // if (root.VariantInfoSection.is(":visible")) {
+        //     root.VariantInfoSection.hide().detach().appendTo($('body'));
+        // }
+        // variants.closest('div[class*="col"').removeAttr('style');
     }
 
     return root;
