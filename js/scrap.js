@@ -110,9 +110,9 @@ var Scrap = (function() {
         });
     }
 
-    function ShowInfoPanel(albumObject) {
-        alert(root.VariantInfoSection.length);
+    function ShowInfoPanel(albumObject) {        
         root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});        
+        alert(root.VariantInfoSection.height());
         root.VariantInfoSection.show();
         albumObject.closest('div[class*="col"').siblings().each(function() { 
             var $this = $(this);
