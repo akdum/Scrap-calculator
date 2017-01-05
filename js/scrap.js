@@ -113,18 +113,18 @@ var Scrap = (function() {
     function ShowInfoPanel(albumObject) {        
         root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});                
         root.VariantInfoSection.show();
-        alert(root.VariantInfoSection[0].clientHeight);
+        var needToMove = true;
+        var albumTop = albumObject.offset().top;            
+        var marginOffset = root.VariantInfoSection[0].clientHeight;
+        alert('albumTop '+ albumTop);
         albumObject.closest('div[class*="col"').siblings().each(function() { 
-            var $this = $(this);
-            var albumTop = albumObject.offset().top;
-            alert('albumTop '+ albumTop);
-            var marginOffset = root.VariantInfoSection[0].clientHeight;
-            alert('offset el '+ $this.offset().top);
-            if ($this.offset().top > albumTop) {
+            var $this = $(this);                                    
+            if ($this.offset().top > albumTop && needToMove) {
+                alert('offset element '+ $this.offset().top);
                 $this.css('margin-top', marginOffset + 'px');
-                alert('offset '+ marginOffset);
-                break;
-            }
+                alert('margin-top '+ marginOffset);                
+                needToMove = false;
+            }            
         })        
 
     }
