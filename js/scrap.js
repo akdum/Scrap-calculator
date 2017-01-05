@@ -111,15 +111,16 @@ var Scrap = (function() {
     }
 
     function ShowInfoPanel(albumObject) {        
-        root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});        
-        alert(root.VariantInfoSection.height());
+        root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});                
         root.VariantInfoSection.show();
+        alert(root.VariantInfoSection[0].clientHeight);
         albumObject.closest('div[class*="col"').siblings().each(function() { 
             var $this = $(this);
             var albumTop = albumObject.offset().top;
             var marginOffset = root.VariantInfoSection[0].clientHeight;
             if ($this.offset().top > albumTop) {
                 $this.css('margin-top', marginOffset + 'px');
+                alert('offset '+ marginOffset);
             }
         })        
 
