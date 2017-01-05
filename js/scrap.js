@@ -139,9 +139,10 @@ var Scrap = (function() {
         // })        
         var albumColumn = albumObject.closest('div[class*="col"');
         var nextRowElement = albumColumn;
-
+        alert('start');
         albumColumn.siblings().each(function() {
             var $this = $(this);
+            alert($this);
             if ($this.offset().top > albumObject.offset().top) {
                 nextRowElement = $this;
                 return false;
