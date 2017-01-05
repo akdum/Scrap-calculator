@@ -99,6 +99,10 @@ section {
 [class*="col-"]:last-of-type {
     margin-bottom: 0px;
 }
+.hidden-column {
+    visibility: hidden;
+    height: 0;
+}
 /* ============================================= */
 /* =============NAVIGATION====================== */
 /* ============================================= */
@@ -164,6 +168,11 @@ header .header-content .header-content-inner p {
     margin-top: 20px;
 }
 /* Variants */
+.info-column {
+    background-color: rgba(183, 219, 152, 0.51);
+    width: 100%;
+    transition: all 0.5s;
+}
 #calculate .variant-box {
     width: 100%;    
     cursor: pointer;

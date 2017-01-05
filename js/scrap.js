@@ -82,15 +82,7 @@ var Scrap = (function() {
         var template = $('#variant-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, { "variants": [
-                                                        {name: "album1.jpg", price: "700"},
-                                                        {name: "album2.jpg", price: "1500"},
-                                                        {name: "album3.jpg", price: "3500"},
-                                                        {name: "album4.jpg", price: "5000"},
-                                                         {name: "album1.jpg", price: "7000"},
-                                                        {name: "album2.jpg", price: "10000"}
-                                                        ]
-                                                    });
+        var rendered = Mustache.render(template, {"variants": window.PromoAlums});
         container.html(rendered);
     }
 
@@ -102,7 +94,8 @@ var Scrap = (function() {
                 if (!$this.hasClass('active')) {
                     $this.closest('.row').find(".variant-box.active").removeClass('active');
                     $this.addClass('active');
-
+                    HideInfoPanel();
+                    
                     ShowInfoPanel($this);              
                 } else {
                     $this.removeClass('active');
@@ -133,13 +126,13 @@ var Scrap = (function() {
         } else {
             root.VariantInfoColumn.insertAfter(albumColumn);
         }
-        root.VariantInfoColumn.show(400);
+        root.VariantInfoColumn.show(0, function(){
+            $(this).css('opacity','1');
+        });
     }
 
     function HideInfoPanel() {
-        root.VariantInfoColumn.hide(400, function(){
-            $(this).detach().appendTo($('body'));
-        });
+        root.VariantInfoColumn.hide().css('opacity','0').detach().appendTo($('body'));
     }
 
     return root;
