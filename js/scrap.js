@@ -1,5 +1,9 @@
 "use strict";
 
+window.onerror = function(error) {
+    alert(error);
+};
+
 var Scrap = (function() {
     var root = {};
 
