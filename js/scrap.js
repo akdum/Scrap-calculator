@@ -7,10 +7,10 @@ window.onerror = function(error) {
 var Scrap = (function() {
     var root = {};
 
-    root.VariantInfoSection = null;
+    root.VariantInfoColumn = null;
 
     root.Init = function() {
-        root.VariantInfoSection = $("#variant-info");
+        root.VariantInfoColumn = $(".info-column");
 
         PreparePromo($("#description .description-row"));
         PrepareVariants();
@@ -106,57 +106,37 @@ var Scrap = (function() {
                     ShowInfoPanel($this);              
                 } else {
                     $this.removeClass('active');
-                    HideInfoPanel(variants);
+                    HideInfoPanel();
                 }
                 e.stopPropagation();
             });
         });
         $("body").on('click', function(e) {
-            HideInfoPanel(variants);
+            HideInfoPanel();
         });
     }
 
-    function ShowInfoPanel(albumObject) {        
-        // root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});                
-        // root.VariantInfoSection.show();
-        // var lastOffset = 0;
-
-        // var albumTop = albumObject.offset().top;            
-        // var marginOffset = root.VariantInfoSection[0].clientHeight;
-
-        // alert('albumTop '+ albumTop);
-        // albumObject.closest('div[class*="col"').siblings().each(function() { 
-        //     var $this = $(this);
-        //     var $thisOffset = $this.offset().top;
-        //     if ( $thisOffset > albumTop) {
-        //         if (lastOffset == 0) lastOffset = $this.offset().top;
-        //         if (!($thisOffset  > lastOffset)) {
-        //             alert('offset element '+ $thisOffset);
-        //             $this.css('margin-top', marginOffset + 'px');
-        //             alert('margin-top '+ marginOffset);
-        //         }
-        //     }            
-        // })        
-        alert('start nextRowElement');
+    function ShowInfoPanel(albumObject) {         
         var albumColumn = albumObject.closest("div[class*='col']");
         var nextRowElement = albumColumn;
-        alert('start siblings');
         albumColumn.siblings().each(function() {
             var $this = $(this);
-            alert($this);
             if ($this.offset().top > albumObject.offset().top) {
                 nextRowElement = $this;
                 return false;
             }
         });
-        alert(nextRowElement.find('.price').text());
+
+        root.VariantInfoColumn
+            .detach()
+            .insertBefore(nextRowElement)
+            .show(400);
     }
 
-    function HideInfoPanel(variants) {
-        // if (root.VariantInfoSection.is(":visible")) {
-        //     root.VariantInfoSection.hide().detach().appendTo($('body'));
-        // }
-        // variants.closest('div[class*="col"').removeAttr('style');
+    function HideInfoPanel() {
+        root.VariantInfoColumn.hide(400, function(){
+            $(this).detach().appendTo($('body'));
+        });
     }
 
     return root;
