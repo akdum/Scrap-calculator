@@ -89,30 +89,49 @@ var Scrap = (function() {
     }
 
     function PrepareVariantsEvents(container) {
-        $(".variant-box", container[0]).each(function() {
+        var variants = $(".variant-box", container[0]);
+        variants.each(function() {
             $(this).on('click', function(e) {
                 var $this = $(this);
                 if (!$this.hasClass('active')) {
                     $this.closest('.row').find(".variant-box.active").removeClass('active');
                     $this.addClass('active');
 
-                    root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : $this.offset().top + $this.height() + 15});
-                    root.VariantInfoSection.show();
-                    $("html, body").stop().animate({
-                        scrollTop: root.VariantInfoSection.offset().top - root.VariantInfoSection[0].clientHeight
-                    }, 1000);
+                    ShowInfoPanel($this);
+                    // $("html, body").stop().animate({
+                    //     scrollTop: root.VariantInfoSection.offset().top - root.VariantInfoSection[0].clientHeight
+                    // }, 1000);                    
                 } else {
                     $this.removeClass('active');
-                    root.VariantInfoSection.hide(400);
+                    HideInfoPanel(variants);
                 }
                 e.stopPropagation();
             });
         });
         $("body").on('click', function(e) {
-            if (root.VariantInfoSection.is(":visible")) {
-                root.VariantInfoSection.hide(400);
-            }            
+            HideInfoPanel(variants);
         });
+    }
+
+    function ShowInfoPanel(albumObject) {
+        root.VariantInfoSection.css({"position": "absolute", "width": "100%", "top" : albumObject.offset().top + albumObject.height() + 15});        
+        root.VariantInfoSection.show();
+        albumObject.closest('div[class*="col"').siblings().each(function() { 
+            var $this = $(this);
+            var albumTop = albumObject.offset().top;
+            var marginOffset = root.VariantInfoSection[0].clientHeight;
+            if ($this.offset().top > albumTop) {
+                $this.css('margin-top', marginOffset + 'px');
+            }
+        })        
+
+    }
+
+    function HideInfoPanel(variants) {
+        if (root.VariantInfoSection.is(":visible")) {
+            root.VariantInfoSection.hide().detach().appendTo($('body'));
+        }
+        variants.closest('div[class*="col"').removeAttr('style');
     }
 
     return root;
