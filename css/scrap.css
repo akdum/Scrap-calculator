@@ -201,7 +201,6 @@ header .header-content .header-content-inner p {
 }
 #feedback .fotorama {
     margin: auto;
-    width: 800px;
 }
 #feedback .fotorama .feedback-photo {
     text-align: center;
@@ -219,9 +218,6 @@ header .header-content .header-content-inner p {
     width: 100px;
     vertical-align: top;
     margin-bottom: 2rem;
-}
-.fotorama__nav-wrap {
-    display: none;
 }
 
 /* =============================================*/
@@ -309,5 +305,30 @@ header .header-content .header-content-inner p {
     }
     .navbar-toggler {
         float: right;
+    }
+    #feedback .fotorama {
+    margin: auto;
+    width: calc(100% - 20px);
+    }
+    #feedback .fotorama__stage {
+        height: 600px !important;
+    }
+    #feedback .fotorama .feedback-photo {
+        text-align: center;
+    }
+    #feedback .fotorama .feedback-photo img {
+        border-radius: 50px;
+        width: 50px;
+        vertical-align: top;
+        margin-bottom: 1rem;
+    }
+    #feedback .fotorama .feedback-text h4 {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    #feedback .fotorama .feedback-text p {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1rem;
     }
 }

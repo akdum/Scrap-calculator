@@ -192,7 +192,9 @@ var Scrap = (function() {
         var rendered = Mustache.render(template, {"feedbacks": window.Feedbacks});
         feebackRow.html(rendered);
 
-        feebackRow.fotorama();
+        feebackRow.fotorama({
+            nav: false
+        });
     }
 
     return root;
