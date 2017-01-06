@@ -199,6 +199,30 @@ header .header-content .header-content-inner p {
     float: right;
     padding-right: 1rem;
 }
+#feedback .fotorama {
+    margin: auto;
+    width: 800px;
+}
+#feedback .fotorama .feedback-photo {
+    text-align: center;
+}
+#feedback .fotorama .feedback-text h4 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+#feedback .fotorama .feedback-text p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+#feedback .fotorama .feedback-photo img {
+    border-radius: 100px;
+    width: 100px;
+    vertical-align: top;
+    margin-bottom: 2rem;
+}
+.fotorama__nav-wrap {
+    display: none;
+}
 
 /* =============================================*/
 

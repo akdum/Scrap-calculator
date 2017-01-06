@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/scrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -73,9 +74,8 @@
     </section>
     <section class="bg-primary" id="feedback">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-xs-center">
-                    <h2 class="section-heading">Отзывы</h2>
+            <div class="row feedback">
+                <div class="fotorama" data-loop="true" data-shuffle="true" data-width="900" data-height="320">
                 </div>
             </div>
         </div>
@@ -137,6 +137,19 @@
         </div>        
         {{/gallery}}
     </script>
+    <script id="feedback-template" type="x-tmpl-mustache">
+    {{#feedbacks}}
+    <div class="feedback-card">
+        <div class="feedback-photo">
+            <img class="sr-image" src="./img/feedback/{{ name }}">
+        </div>
+        <div class="feedback-text text-faded">
+            <h4>{{ personName }}</h4>
+            <p>{{ text }}</p>
+        </div>        
+    </div>
+    {{/feedbacks}}
+    </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
@@ -146,6 +159,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <script src="./js/models.js"></script>
 <script src="./js/scrap.js"></script>
 

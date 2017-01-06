@@ -14,8 +14,9 @@ var Scrap = (function() {
 
         PreparePromo($("#description .description-row"));
         PrepareVariants();
+        PrepareFeedbacks();
         ScrollInit();
-        AffixBehaviour();   
+        AffixBehaviour();
     }
 
     function AffixBehaviour() {
@@ -41,14 +42,26 @@ var Scrap = (function() {
 
         window.sr = ScrollReveal();
         sr.reveal(".sr-icons", {
-            duration: 1600,
+            duration: 1000,
+            scale: .1,
+            distance: "0px"
+        }, 200);
+
+        sr.reveal(".sr-image", {
+            duration: 1000,
             scale: .1,
             distance: "0px"
         }, 200);
 
         sr.reveal(".sr-variant", {
-            duration: 1600,
+            duration: 1000,
             scale: .8,
+            distance: "0px"
+        }, 200);
+
+        sr.reveal(".sr-contact", {
+            duration: 600,
+            scale: .3,
             distance: "0px"
         }, 200);
 
@@ -169,6 +182,17 @@ var Scrap = (function() {
 
     function HideInfoPanel() {
         root.VariantInfoColumn.hide().css('opacity','0').detach().appendTo($('body'));
+    }
+
+    function PrepareFeedbacks() {
+        var feebackRow = $("#feedback .row .fotorama");
+        var template = $('#feedback-template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        var rendered = Mustache.render(template, {"feedbacks": window.Feedbacks});
+        feebackRow.html(rendered);
+
+        feebackRow.fotorama();
     }
 
     return root;
