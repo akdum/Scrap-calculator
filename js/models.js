@@ -11,10 +11,10 @@ window.PromoAlbums = [
         ],
         slogan: "Практичный",
         badges: [
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-list-ol", badgeText: "100, 200 или 300 фото"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "Стандартный размер фотографий 10x15"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-fighter-jet", badgeText: "Быстро"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-hand-paper-o", badgeText: "Обложка ручной работы"}
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-list-ol", badgeText: "100, 200 или 300 фото"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-picture-o", badgeText: "Стандартный размер фотографий 10x15"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-fighter-jet", badgeText: "Быстро"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-hand-paper-o", badgeText: "Обложка ручной работы"}
         ]
     },
     {id: 1, name: "album2.jpg", price: "3700", gallery : [
@@ -27,11 +27,11 @@ window.PromoAlbums = [
         ],
         slogan: "Популярный",
         badges: [
-            {classes: "offset-md-1 col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-heart", badgeText: "Для самых любимых фотографий"},
-            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-list-ol", badgeText: "От 30 до 100 фото"},
-            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "Размер фото 9х13 или 10х15"},
-            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-diamond", badgeText: "Объемный украшения, цветы, ленты"},
-            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-envelope-o", badgeText: "Места для записей, конверты, кармашки"}
+            {classes: "offset-md-1 col-md-2 col-sm-6 col-xs-12", badgeClass: "fa-heart", badgeText: "Для самых любимых фотографий"},
+            {classes: "col-md-2 col-sm-6 col-xs-12", badgeClass: "fa-list-ol", badgeText: "От 30 до 100 фото"},
+            {classes: "col-md-2 col-sm-6 col-xs-12", badgeClass: "fa-picture-o", badgeText: "Размер фото 9х13 или 10х15"},
+            {classes: "col-md-2 col-sm-6 col-xs-12", badgeClass: "fa-diamond", badgeText: "Объемный украшения, цветы, ленты"},
+            {classes: "col-md-2 col-sm-6 col-xs-12", badgeClass: "fa-envelope-o", badgeText: "Места для записей, конверты, кармашки"}
         ]
     },
     {id: 2, name: "album3.jpg", price: "5000", gallery : [
@@ -44,10 +44,10 @@ window.PromoAlbums = [
         ],
         slogan: "Необычный",
         badges: [
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-glass", badgeText: "Украшение интерьера"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "От 10 до 50 фотографий разного размера"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-trophy", badgeText: "Вызывает восхищение"},
-            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-sticky-note", badgeText: "С готовыми фото или местом под них"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-glass", badgeText: "Украшение интерьера"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-picture-o", badgeText: "От 10 до 50 фотографий разного размера"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-trophy", badgeText: "Вызывает восхищение"},
+            {classes: "col-md-3 col-sm-6 col-xs-12", badgeClass: "fa-sticky-note", badgeText: "С готовыми фото или местом под них"},
         ]
     }
 ]

@@ -347,4 +347,11 @@ header .header-content .header-content-inner p {
         padding-right: 2rem;
         font-size: 1rem;
     }
+    .info-column .variant-info-content .content-slogan {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .info-column .variant-info-content .badge-text {
+        font-size: 1.2rem;
+    }
 }
