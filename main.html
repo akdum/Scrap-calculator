@@ -99,7 +99,10 @@
         </div>
     </section>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center info-column" style="display: none;opacity: 0">
-        <div class="container-fluid">
+        <div class="container">
+            <div class="row info-spec"></div>
+        </div>
+        <div class="container-fluid">            
             <div class="row gallery"></div>
         </div>
     </div>
@@ -125,6 +128,14 @@
             </div>
         </div>
         {{/variants}}
+    </script>
+    <script id="variant-info-template" type="x-tmpl-mustache">
+        <div class="variant-info-content">
+            <p class="content-eyebrow"></p>
+            <h2 class="content-slogan">{{ slogan }}</h2>
+            <div class="badge-block">                
+            </div>
+        </div>
     </script>
     <script id="gallery-template" type="x-tmpl-mustache">
         {{#gallery}}
@@ -163,7 +174,7 @@
 <script src="./js/models.js"></script>
 <script src="./js/scrap.js"></script>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586be04627105d57"></script>
+<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586be04627105d57"></script>-->
 </body>
 
 </html>

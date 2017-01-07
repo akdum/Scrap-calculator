@@ -8,7 +8,9 @@ window.PromoAlbums = [
         {name: "album1_2.jpg"},
         {name: "album1_3.jpg"},
         {name: "album1_2.jpg"}
-        ]
+        ],
+        eyebrow: "Быстро и просто",
+        slogan: "Просто фотоальбом и быстро"
     },
     {id: 1, name: "album2.jpg", price: "1500", gallery : [
         {name: "album2_1.jpg"},
@@ -17,7 +19,9 @@ window.PromoAlbums = [
         {name: "album2_2.jpg"},
         {name: "album2_3.jpg"},
         {name: "album2_2.jpg"}
-        ]
+        ],
+        eyebrow: "",
+        slogan: ""
     },
     {id: 2, name: "album3.jpg", price: "3500", gallery : [
         {name: "album3_1.jpg"},
@@ -26,7 +30,9 @@ window.PromoAlbums = [
         {name: "album3_3.jpg"},
         {name: "album3_1.jpg"},
         {name: "album3_3.jpg"}
-        ]
+        ],
+        eyebrow: "",
+        slogan: ""
     },
     {id: 3, name: "album4.jpg", price: "5000", gallery : [
         {name: "album4_1.jpg"},
@@ -35,7 +41,9 @@ window.PromoAlbums = [
         {name: "album4.jpg"},
         {name: "album4_1.jpg"},
         {name: "album4.jpg"}
-        ]
+        ],
+        eyebrow: "",
+        slogan: ""
     }
 ]
 
