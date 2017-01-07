@@ -322,6 +322,9 @@ header .header-content .header-content-inner p {
     .navbar-toggler {
         float: right;
     }
+    #description {
+        display: none;
+    }
     #feedback .fotorama {
     margin: auto;
     width: calc(100% - 20px);
