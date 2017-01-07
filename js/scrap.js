@@ -157,14 +157,13 @@ var Scrap = (function() {
     }
 
     function FillInfoPanel(albumColumnModel) {
-        var template = $('#gallery-template').html();
-        var row = root.VariantInfoColumn.find('.row');
+        var template = $('#variant-info-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
 
-        var rendered = Mustache.render(template, {"gallery": albumColumnModel.gallery});
-        row.html(rendered);
+        var rendered = Mustache.render(template, albumColumnModel);
+        root.VariantInfoColumn.html(rendered);
 
-        row.magnificPopup({
+        root.VariantInfoColumn.magnificPopup({
             delegate: "a",
             type: "image",
             tLoading: "Загружается изображение #%curr%...",

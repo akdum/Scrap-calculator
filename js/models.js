@@ -9,8 +9,8 @@ window.PromoAlbums = [
         {name: "album1_3.jpg"},
         {name: "album1_2.jpg"}
         ],
-        eyebrow: "Быстро и просто",
-        slogan: "Просто фотоальбом и быстро"
+        eyebrow: "Быстро и красиво",
+        slogan: "Красивый фотоальбом для подарка завтра"
     },
     {id: 1, name: "album2.jpg", price: "1500", gallery : [
         {name: "album2_1.jpg"},

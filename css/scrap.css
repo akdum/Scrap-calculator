@@ -173,6 +173,27 @@ header .header-content .header-content-inner p {
     width: 100%;
     transition: all 1s;
 }
+.info-column .variant-info-content {
+    color: #fff;
+    padding-top: 2rem;
+    font-family: 'Exo 2';
+}
+.info-column .variant-info-content .content-eyebrow {
+    font-size: 2rem;
+    line-height: 1.14286;
+    letter-spacing: 0em;
+}
+.info-column .variant-info-content .content-slogan {
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-size: 3rem;
+    line-height: 1.00962;
+}
+.info-column .variant-info-content .badge-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
 .info-column .gallery {
     margin-top: 3rem;
 }

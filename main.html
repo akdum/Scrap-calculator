@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="./css/scrap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -99,14 +100,8 @@
         </div>
     </section>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center info-column" style="display: none;opacity: 0">
-        <div class="container">
-            <div class="row info-spec"></div>
-        </div>
-        <div class="container-fluid">            
-            <div class="row gallery"></div>
-        </div>
     </div>
-    <script id="promo-icon-template" type="x-tmpl-mustache">
+<script id="promo-icon-template" type="x-tmpl-mustache">
         {{#promo}}
         <div class="col-lg-3 col-md-6 text-xs-center">
             <div class="promo-box">
@@ -117,7 +112,7 @@
         </div>
         {{/promo}}
     </script>
-    <script id="variant-template" type="x-tmpl-mustache">
+<script id="variant-template" type="x-tmpl-mustache">
         {{#variants}}
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12" data-id="{{ id }}">
             <div class="variant-box clearfix sr-variant">
@@ -129,26 +124,35 @@
         </div>
         {{/variants}}
     </script>
-    <script id="variant-info-template" type="x-tmpl-mustache">
+
+<script id="variant-info-template" type="x-tmpl-mustache">
+    <div class="container">
         <div class="variant-info-content">
-            <p class="content-eyebrow"></p>
+            <p class="content-eyebrow">{{ eyebrow }}</p>
             <h2 class="content-slogan">{{ slogan }}</h2>
-            <div class="badge-block">                
+            <div class="badge-block row">
+                <div class="offset-md-2 col-md-2 col-sm-6 col-xs-6"><i class="fa fa-fighter-jet fa-3x sr-contact"></i><div class="badge-text">Максимально быстро</div></div>
+                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-camera fa-3x sr-contact"></i><div class="badge-text">Идеально для фотографий</div></div>
+                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-rub fa-3x sr-contact"></i><div class="badge-text">Не дорого</div></div>
+                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-gift fa-3x sr-contact"></i><div class="badge-text">Хороший подарок</div></div>
             </div>
         </div>
-    </script>
-    <script id="gallery-template" type="x-tmpl-mustache">
-        {{#gallery}}
-        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-12">
-            <a href="./img/fullsize/{{ name }}">
-                <figure class="thumbnail">
-                    <img src="./img/thumbnails/{{ name }}" />
-                </figure>
-            </a>
-        </div>        
-        {{/gallery}}
-    </script>
-    <script id="feedback-template" type="x-tmpl-mustache">
+    </div>
+    <div class="container-fluid">            
+        <div class="row gallery">
+            {{#gallery}}
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                <a href="./img/fullsize/{{ name }}">
+                    <figure class="thumbnail">
+                        <img src="./img/thumbnails/{{ name }}" />
+                    </figure>
+                </a>
+            </div>        
+            {{/gallery}}
+        </div>
+    </div>
+</script>
+<script id="feedback-template" type="x-tmpl-mustache">
     {{#feedbacks}}
     <div class="feedback-card">
         <div class="feedback-photo">
