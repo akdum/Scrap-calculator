@@ -158,9 +158,13 @@ var Scrap = (function() {
 
     function FillInfoPanel(albumColumnModel) {
         var template = $('#variant-info-template').html();
+        var badgesTemplate = $('#badges-template').html();
         Mustache.parse(template);   // optional, speeds up future uses
+        Mustache.parse(badgesTemplate);
 
-        var rendered = Mustache.render(template, albumColumnModel);
+        var rendered = Mustache.render(template, albumColumnModel, {
+            badges: badgesTemplate
+        });
         root.VariantInfoColumn.html(rendered);
 
         root.VariantInfoColumn.magnificPopup({

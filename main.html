@@ -128,13 +128,9 @@
 <script id="variant-info-template" type="x-tmpl-mustache">
     <div class="container">
         <div class="variant-info-content">
-            <p class="content-eyebrow">{{ eyebrow }}</p>
             <h2 class="content-slogan">{{ slogan }}</h2>
             <div class="badge-block row">
-                <div class="offset-md-2 col-md-2 col-sm-6 col-xs-6"><i class="fa fa-fighter-jet fa-3x sr-contact"></i><div class="badge-text">Максимально быстро</div></div>
-                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-camera fa-3x sr-contact"></i><div class="badge-text">Идеально для фотографий</div></div>
-                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-rub fa-3x sr-contact"></i><div class="badge-text">Не дорого</div></div>
-                <div class="col-md-2 col-sm-6 col-xs-6"><i class="fa fa-gift fa-3x sr-contact"></i><div class="badge-text">Хороший подарок</div></div>
+                {{> badges}}
             </div>
         </div>
     </div>
@@ -151,6 +147,11 @@
             {{/gallery}}
         </div>
     </div>
+</script>
+<script id="badges-template" type="x-tmpl-mustache">
+    {{#badges}}
+        <div class="{{classes}}"><i class="fa {{ badgeClass }} fa-3x sr-contact"></i><div class="badge-text">{{ badgeText }}</div></div>
+    {{/badges}}
 </script>
 <script id="feedback-template" type="x-tmpl-mustache">
     {{#feedbacks}}

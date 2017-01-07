@@ -1,7 +1,7 @@
 "use strict";
 
 window.PromoAlbums = [
-    {id: 0, name: "album1.jpg", price: "700", gallery : [
+    {id: 0, name: "album1.jpg", price: "690", gallery : [
         {name: "album1_1.jpg"},
         {name: "album1_2.jpg"},
         {name: "album1_3.jpg"},
@@ -9,10 +9,15 @@ window.PromoAlbums = [
         {name: "album1_3.jpg"},
         {name: "album1_2.jpg"}
         ],
-        eyebrow: "Быстро и красиво",
-        slogan: "Красивый фотоальбом для подарка завтра"
+        slogan: "Практичный",
+        badges: [
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-list-ol", badgeText: "100, 200 или 300 фото"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "Стандартный размер фотографий 10x15"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-fighter-jet", badgeText: "Быстро"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-hand-paper-o", badgeText: "Обложка ручной работы"}
+        ]
     },
-    {id: 1, name: "album2.jpg", price: "1500", gallery : [
+    {id: 1, name: "album2.jpg", price: "3700", gallery : [
         {name: "album2_1.jpg"},
         {name: "album2_2.jpg"},
         {name: "album2_3.jpg"},
@@ -20,10 +25,16 @@ window.PromoAlbums = [
         {name: "album2_3.jpg"},
         {name: "album2_2.jpg"}
         ],
-        eyebrow: "",
-        slogan: ""
+        slogan: "Популярный",
+        badges: [
+            {classes: "offset-md-1 col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-heart", badgeText: "Для самых любимых фотографий"},
+            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-list-ol", badgeText: "От 30 до 100 фото"},
+            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "Размер фото 9х13 или 10х15"},
+            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-diamond", badgeText: "Объемный украшения, цветы, ленты"},
+            {classes: "col-md-2 col-sm-6 col-xs-6", badgeClass: "fa-envelope-o", badgeText: "Места для записей, конверты, кармашки"}
+        ]
     },
-    {id: 2, name: "album3.jpg", price: "3500", gallery : [
+    {id: 2, name: "album3.jpg", price: "5000", gallery : [
         {name: "album3_1.jpg"},
         {name: "album3_3.jpg"},
         {name: "album3_1.jpg"},
@@ -31,19 +42,13 @@ window.PromoAlbums = [
         {name: "album3_1.jpg"},
         {name: "album3_3.jpg"}
         ],
-        eyebrow: "",
-        slogan: ""
-    },
-    {id: 3, name: "album4.jpg", price: "5000", gallery : [
-        {name: "album4_1.jpg"},
-        {name: "album4.jpg"},
-        {name: "album4_1.jpg"},
-        {name: "album4.jpg"},
-        {name: "album4_1.jpg"},
-        {name: "album4.jpg"}
-        ],
-        eyebrow: "",
-        slogan: ""
+        slogan: "Необычный",
+        badges: [
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-glass", badgeText: "Украшение интерьера"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-picture-o", badgeText: "От 10 до 50 фотографий разного размера"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-trophy", badgeText: "Вызывает восхищение"},
+            {classes: "col-md-3 col-sm-6 col-xs-6", badgeClass: "fa-sticky-note", badgeText: "С готовыми фото или местом под них"},
+        ]
     }
 ]
 
