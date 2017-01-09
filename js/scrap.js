@@ -78,7 +78,7 @@ var Scrap = (function() {
         var rendered = Mustache.render(template, { "promo": [
                                                         {title: "Дизайн уникален", comment: "Дизайн разрабатывается с учетом Вашего мнения.", className: "fa-user-circle text-faded", textClassName: "text-faded"},
                                                         {title: "Необычно", comment: "Отличный необычный подарок друзьям и близким.", className: "fa-gift text-faded", textClassName: "text-faded"},
-                                                        {title: "Красиво", comment: "Превосходное место сохранить свои волшебные моменты.", className: "fa-picture-o text-faded", textClassName: "text-faded"},
+                                                        {title: "Красиво", comment: "Превосходное место сохранить свои волшебные моменты.", className: "fa-star text-faded", textClassName: "text-faded"},
                                                         {title: "Сделано с Любовью", comment: "Каждый альбом уникальный и делается только для Вас.", className: "fa-heart text-faded", textClassName: "text-faded"}
                                                         ]
                                                     });
